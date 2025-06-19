@@ -1,31 +1,25 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import React from 'react';
+import Tab4Profile from '../screens/Tab4Profile';
 
 export default function TabFourScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Four</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/four.tsx" />
-    </View>
-  );
-}
+  const handleBack = () => {
+    // Navigation logic will be implemented later
+    console.log('Back button pressed');
+  };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-}); 
+  const handleInstagram = () => {
+    // Instagram linking logic will be implemented later
+    console.log('Instagram button pressed');
+  };
+
+  return (
+    <Tab4Profile
+      name="Karl"
+      city="Prague"
+      bio="I love anime, trying new amazing cuisine, and going on spontaneous excursions with new friends."
+      imageSrc={require('@/assets/profile-example.png')}
+      onBack={handleBack}
+      onInstagram={handleInstagram}
+    />
+  );
+} 
